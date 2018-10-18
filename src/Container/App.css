@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Mali:700');
+
+h1 {
+  font-family: 'Mali', cursive;
+  color: #0ccac4;
+  font-weight: 200;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Mali', cursive;
+}
