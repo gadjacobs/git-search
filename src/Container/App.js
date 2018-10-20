@@ -28,6 +28,12 @@ class App extends Component {
   }
 
   render() {
+
+    const onSearchChange = event => {
+      this.setState({ searchBox: event.target.value });
+      console.log(event.target.value)
+    };
+
     const { repos, searchBox } = this.state;
 
     return repos.length === 0 ? (
@@ -43,9 +49,9 @@ class App extends Component {
           Enter a username and I'll show you their repos.
         </h4>
 
-        <Search />
+          <Search searchChange={onSearchChange}/>
 
-        <h1>Repos:</h1>
+        <h1>{`Repositories:`}</h1>
 
         <RepoList />
       </div>
