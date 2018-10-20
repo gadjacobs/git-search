@@ -14,6 +14,19 @@ class App extends Component {
     };
   }
 
+  // get all the data required to populate frontend.
+  componentDidMount() {
+    fetch(
+      'https://raw.githubusercontent.com/gadjacobs/front-end-challenge/master/data.json'
+    )
+      .then(response => response.json())
+      .then(data => {
+        // populate the empty repository array with data from data.json
+        this.setState({ repos: data.data.repositories });
+        console.log(data.data.repositories);
+      });
+  }
+
   render() {
     const { repos, searchBox } = this.state;
 
