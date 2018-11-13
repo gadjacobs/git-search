@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
 import RepoList from '../Components/RepoList';
 import Search from '../Components/Search';
+import './App.css';
 import 'tachyons';
 
 class App extends Component {
@@ -28,13 +28,26 @@ class App extends Component {
   }
 
   render() {
-
+    // update searchbox state to the search input value
     const onSearchChange = event => {
       this.setState({ searchBox: event.target.value });
-      console.log(event.target.value)
+      console.log(event.target.value);
     };
 
+    // destructuring state
     const { repos, searchBox } = this.state;
+
+    const filteredList = repos.filter(repo => {
+      return (
+        repo.name.toLocaleLowerCase().includes(searchBox.toLocaleLowerCase()) ||
+        repo.primaryLanguage
+          .toLocaleLowerCase()
+          .includes(searchBox.toLocaleLowerCase()) ||
+        repo.owner.login
+          .toLocaleLowerCase()
+          .includes(searchBox.toLocaleLowerCase())
+      );
+    });
 
     return repos.length === 0 ? (
       <article className="vh-100 dt w-100 bg-dark-pink">
@@ -49,11 +62,11 @@ class App extends Component {
           Enter a username and I'll show you their repos.
         </h4>
 
-          <Search searchChange={onSearchChange}/>
+        <Search searchChange={onSearchChange} />
 
-        <h1>{`Repositories:`}</h1>
+          <h1>{`Repositories:`}</h1>
 
-        <RepoList />
+        <RepoList repos={filteredList} />
       </div>
     );
   }

@@ -1,5 +1,6 @@
 dependencies:
   antd: 3.10.1
+  react-absolute-grid: 3.0.1
 devDependencies:
   tachyons: 4.11.1
 packages:
@@ -758,6 +759,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-rbgrzm1/i8mgfwOI4t1CwWK7wGe+OwX+dNa7PVMgxZYPBADGh86eD4OcJO1UKGeajIMDUUKMluaZxvgraQIOmw==
+  /react-absolute-grid/3.0.1:
+    dev: false
+    resolution:
+      integrity: sha512-Eh1WqFk/jPA2CN6aci5WRgYKKmiwl52WLSB9+DHHa/b1iUIZ00qKC7IUfkIhhi3Iz9uVzsUwap0HfDO6zkeIWA==
   /react-lazy-load/3.0.13:
     dependencies:
       eventlistener: 0.0.1
@@ -867,4 +872,5 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   antd: ^3.10.1
+  react-absolute-grid: ^3.0.1
   tachyons: ^4.11.1

@@ -7,8 +7,9 @@ const Search = (searchBox, searchChange) => {
         type="search"
         className="bg-lightest-blue pa3 ba b--green"
         placeholder="Enter a username"
-        onChange={searchChange}
+        onChange={() => searchChange}
       />
+      {/* <button onClick={()=>searchChange} >Search</button> */}
     </div>
   );
 };
