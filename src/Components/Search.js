@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Search = (searchBox, searchChange) => {
+const Search = ({searchBox, SearchChange}) => {
   return (
     <div>
       <input
         type="search"
         className="bg-lightest-blue pa3 ba b--green"
         placeholder="Enter a username"
-        onChange={() => searchChange}
+        onChange={SearchChange}
       />
       {/* <button onClick={()=>searchChange} >Search</button> */}
     </div>

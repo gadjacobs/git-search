@@ -29,9 +29,9 @@ class App extends Component {
 
   render() {
     // update searchbox state to the search input value
-    const onSearchChange = event => {
+    const onSearchEdit = event => {
       this.setState({ searchBox: event.target.value });
-      console.log(event.target.value);
+      // console.log(event.target.value);
     };
 
     // destructuring state
@@ -39,13 +39,13 @@ class App extends Component {
 
     const filteredList = repos.filter(repo => {
       return (
-        repo.name.toLocaleLowerCase().includes(searchBox.toLocaleLowerCase()) ||
-        repo.primaryLanguage
+        repo.name
           .toLocaleLowerCase()
           .includes(searchBox.toLocaleLowerCase()) ||
         repo.owner.login
           .toLocaleLowerCase()
-          .includes(searchBox.toLocaleLowerCase())
+          .includes(searchBox.toLocaleLowerCase()) 
+
       );
     });
 
@@ -62,9 +62,9 @@ class App extends Component {
           Enter a username and I'll show you their repos.
         </h4>
 
-        <Search searchChange={onSearchChange} />
+        <Search SearchChange={onSearchEdit} />
 
-          <h1>{`Repositories:`}</h1>
+        <h1>{`Repositories:`}</h1>
 
         <RepoList repos={filteredList} />
       </div>
